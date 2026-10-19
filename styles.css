@@ -1,0 +1,100 @@
+body {
+  background: #f3f6fb;
+}
+
+/* position: sticky header */
+.top-bar {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: #1f4e9c;
+  color: #fff;
+  padding: 14px 20px;
+}
+
+/* CSS Grid: 1 column on mobile, 2 columns on desktop */
+.dashboard {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+  padding: 20px;
+}
+
+@media (min-width: 992px) {
+  .dashboard {
+    grid-template-columns: 360px 1fr;
+    align-items: start;
+  }
+}
+
+.panel {
+  border: 0;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+/* Ticket cards laid out with grid */
+.ticket-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+  gap: 14px;
+}
+
+.ticket {
+  position: relative;
+  border: 1px solid #d9e1ee;
+  border-left: 5px solid #6c757d;
+  border-radius: 8px;
+  padding: 12px;
+  background: #fff;
+}
+
+.ticket.p-High   { border-left-color: #dc3545; }
+.ticket.p-Medium { border-left-color: #ffc107; }
+.ticket.p-Low    { border-left-color: #198754; }
+
+.ticket .id {
+  position: absolute;
+  top: 8px;
+  right: 10px;
+  font-size: 12px;
+  color: #6c757d;
+}
+
+.ticket h3 {
+  font-size: 16px;
+  margin: 0 0 6px;
+  padding-right: 30px;
+}
+
+.ticket p {
+  font-size: 14px;
+  margin: 0 0 10px;
+}
+
+.ticket .tags {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+/* Task 2: summary boxes */
+.summary {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+
+.summary-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 12px;
+  border-radius: 8px;
+  background: #eef3fb;
+}
+
+.summary-box span {
+  font-size: 28px;
+  font-weight: 700;
+  color: #1f4e9c;
+}
